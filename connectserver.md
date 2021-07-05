@@ -8,7 +8,7 @@ Desktop and Mobile client synchronization with OwnCloud server.
 
 # Installing the Desktop Synchronization Client
 
-Download the latest version of the ownCloud Desktop Synchronization Client from the [ownCloud download page](https://owncloud.org/install/#desktop). There are clients for Linux, Mac OS X, and Microsoft Windows.
+Download the latest version of the ownCloud Desktop Synchronization Client from the [ownCloud download page](https://owncloud.org/install/#desktop). There are clients for Linux, Mac OS X and Microsoft Windows.
 
 ## System Requirements
 
@@ -35,7 +35,7 @@ Download the latest version of the ownCloud Desktop Synchronization Client from 
 Installation on Mac OS X and Windows is the same as for any software application as:
 
 1. Download the program.
-2. Double-click downloaded program to launch the installation.
+2. Double-click program to launch the installation.
 3. Follow the installation wizard. 
 
 ### Installation Wizard
@@ -98,8 +98,8 @@ Find source code and more information from the [ownCloud download page](http://o
 
 When you run your ownCloud Android app for the first time, configuration screen opens. On the configuration screen, follow below steps:
 
-1. Enter your server web address.
-2. Login name and password.
+1. Enter your server web address https://studio/owncloud.
+2. Enter you login name and password.
 3. Click **Connect**. 
 
 *Tip*
@@ -109,7 +109,7 @@ When you run your ownCloud Android app for the first time, configuration screen 
 ![Configuration Screen](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Screen3.2.png)
 
 For best security, your ownCloud server should be [SSL-enabled](http://info.ssl.com/article.aspx?id=10241) so that you can connect via HTTPS.
-If your server has a [self-signed SSL certificate](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04), a warning message is displayed, ”**Do you want to trust this certificate anyway?**”<br>
+If your server has a [self-signed SSL certificate](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04), a warning message is displayed, ”**Do you want to trust this certificate anyway?**”.<br>
 If this happens, click **Yes** to accept the certificate and complete your account setup.
 
 ![Trust Certificate](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Screen3.3.png)
