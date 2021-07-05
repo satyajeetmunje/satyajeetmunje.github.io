@@ -110,12 +110,12 @@ When you run your ownCloud Android app for the first time, configuration screen 
 
 ![Configuration Screen](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Screen3.2.png)
 
-For best security, your ownCloud server should be [SSL-enabled](http://info.ssl.com/article.aspx?id=10241) so that you can connect via HTTPS.
-If your server has a [self-signed SSL certificate](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04), a warning message is displayed, ”**Do you want to trust this certificate anyway?**”.
+For best security, your ownCloud server should be [SSL-enabled](http://info.ssl.com/article.aspx?id=10241), which can allow you to connect through HTTPS.
+If your server has a [self-signed SSL certificate](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04), a warning message ”**Do you want to trust this certificate anyway?**” is displayed.
 
 ![Trust Certificate](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Screen3.3.png)
 
-If this happens, click **Yes** to accept the certificate and complete your account setup.
+Next, click **Yes** to accept the certificate and complete your account setup.
 
 
 
