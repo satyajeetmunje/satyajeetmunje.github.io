@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Connect Server
+title: ConnectServer
 permalink: /connectserver/
 ---
 
