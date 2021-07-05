@@ -56,47 +56,13 @@ Follow these instructions for local installation.
 2. Copy and paste the sample <code>docker-compose.yml</code> from this page into the new directory.
 3. Create a <code>.env</code> configuration file, which contains the required configuration settings.
 
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25.7142%;">
-<col style="width: 28.5714%;">
-<col style="width: 45.7144%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Setting Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OWNCLOUD_VERSION</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The ownCloud version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>latest</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OWNCLOUD_DOMAIN</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The ownCloud domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>localhost:8080</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ADMIN_USERNAME</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The admin username</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admin</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ADMIN_PASSWORD</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The admin user’s password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admin</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HTTP_PORT</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP port to bind to</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>8080</code></p></td>
-</tr>
-</tbody>
-</table>
+| Setting Name | Description | Example |
+---| ---| ---|
+| <code>OWNCLOUD_VERSION</code> | The ownCloud version | <code>latest</code> |
+| <code>OWNCLOUD_DOMAIN</code> | The ownCloud domain | <code>localhost:8080</code> |
+| <code>ADMIN_USERNAME</code> | The admin username | <code>admin</code> |
+| <code>ADMIN_PASSWORD</code> | The admin user’s password | <code>admin</code> |
+| <code>HTTP_PORT</code> | The HTTP port to bind to | <code>8080</code> |
 
 Start the container, using your preferred Docker *command-line tool*. The example below shows how to use [Docker Compose](https://docs.docker.com/compose/).
 
@@ -123,44 +89,11 @@ Start the container, using your preferred Docker *command-line tool*. The exampl
 After the process completes, run <code>docker-compose ps</code> to check if all the containers have successfully started.<br>
 You should see output similar to the one below:
 
-```html
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 18.75%;">
-<col style="width: 31.25%;">
-<col style="width: 18.75%;">
-<col style="width: 31.25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Command</th>
-<th class="tableblock halign-left valign-top">State</th>
-<th class="tableblock halign-left valign-top">Ports</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">owncloud_mariadb</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">docker-entrypoint.sh --max &#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Up (healthy)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3306/tcp</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">owncloud_redis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">docker-entrypoint.sh --dat &#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Up (healthy)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6379/tcp</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">owncloud_server</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/usr/bin/entrypoint /usr/b &#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Up (healthy)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.0.0.0:8080&#8594;8080/tcp</p></td>
-</tr>
-</tbody>
-</table>
-```
+| Name | Command | State | Ports |
+---| ---| ---| ---|
+| owncloud_mariadb | docker-entrypoint.sh --max … | Up (healthy) | 3306/tcp |
+| owncloud_redis | docker-entrypoint.sh --dat … | Up (healthy) | 6379/tcp |
+| owncloud_server | /usr/bin/entrypoint /usr/b …​ | Up (healthy) | 0.0.0.0:8080→8080/tcp |
 
 The database, ownCloud and Redis containers are running, and that ownCloud is accessible via port 8080 on the host machine.
 
@@ -198,7 +131,7 @@ The database, ownCloud and Redis containers are running, and that ownCloud is ac
 
 1. Open <code>http://localhost:8080</code> in your browser to log in to the ownCloud UI. The standard ownCloud login screen opens.
 
-![OwnCloud Login Page](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/try.jpg)
+![OwnCloud Login Page](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Page1.png)
 
 2. Enter username and password which you stored in <code>.env</code> earlier.
 
@@ -236,10 +169,7 @@ The file <code>docker-compose.yml</code> contains the configuration of your ownC
 YAML
 
 ```html
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">version: "3"
-<br>
+version: "3"
 
 volumes:
   files:
@@ -308,9 +238,7 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - redis:/data</code></pre>
-</div>
-</div>
+      - redis:/data
 ```
  
 ## Troubleshooting
@@ -320,31 +248,21 @@ services:
 If your container fails to start on Raspberry Pi or other ARM devices, you may have an old version of <code>libseccomp2</code> on your host. This should affect distros based on Rasbian Buster 32 bit. Install a newer version with the following command:
 
 ```html
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">cd /tmp
+cd /tmp
 wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb
-sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb</code></pre>
-</div>
-</div>
+sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb
 ```
 
 Alternatively, you can add the backports repo for Debian Buster:
 
 ```html
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">sudo apt-key adv --keyserver keyserver.ubuntu.com \
+sudo apt-key adv --keyserver keyserver.ubuntu.com \
      --recv-keys 04EE7237B7D453EC 648ACFD622F3D138
 echo "deb http://deb.debian.org/debian buster-backports main" | \
      sudo tee -a /etc/apt/sources.list.d/buster-backports.list
 sudo apt update
-sudo apt install -t buster-backports libseccomp2</code></pre>
-</div>
-</div>
+sudo apt install -t buster-backports libseccomp2
 ```
 You should restart the container after confirming you have <code>libseccomp2.4.4</code> installed.
 
 For more information see: [Linux Server Docs](https://docs.linuxserver.io/faq)
-
-
