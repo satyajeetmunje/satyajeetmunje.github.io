@@ -4,15 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+ownCloud is a suite of client–server software for creating and using file hosting services.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+You can find more information from [ownCloud server](https://owncloud.com/download-server/).
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Get the [Product](https://owncloud.com/product/) feature description:
+
+Get the latest [updates](https://owncloud.com/news/):
+
+Let's get started with [ownCloud](https://owncloud.com/get-started/)
 
 
 [jekyll-organization]: https://github.com/jekyll
