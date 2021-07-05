@@ -10,6 +10,26 @@ Desktop and Mobile client synchronization with OwnCloud server.
 
 Download the latest version of the ownCloud Desktop Synchronization Client from the [ownCloud download page](https://owncloud.org/install/#desktop). There are clients for Linux, Mac OS X, and Microsoft Windows.
 
+## System Requirements
+
+- Windows 7+ (x86 with 32-bit or x86-64; Native WinVFS available for Windows 10 version 1709 or later)
+
+- macOS 10.12+ (x86-64 or Apple M in Rosetta 2 emulation; unsupported legacy builds for Mac OS X 10.10 & 10.11 available)
+
+- CentOS 7.6+ & 8 (x86-64)
+
+- Debian 9.0 & 10 (x86-64)
+
+- Fedora 31 & 32 & 33 (x86-64)
+
+- Ubuntu 18.04 & 20.04 & 20.10 & 21.04 (x86-64)
+
+- openSUSE Leap 15.1 & 15.2 (x86-64)
+
+*Note*
+>
+>For Linux distributions, the latest two versions per platform and the previous Ubuntu [LTS](https://wiki.ubuntu.com/LTS).
+
 ## A) For Mac OS X and Windows Users
 
 Installation on Mac OS X and Windows is the same as for any software application as:
@@ -24,17 +44,17 @@ The installation wizard takes you step-by-step through configuration options and
 
 1. Enter the web address of your ownCloud server https://studio/owncloud. Click **Next**.
 
-##Enter image
+![Enter server address](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Page2.1.png)
 
 2. Enter your ownCloud **Username** and **Password** login credentials. Click **Next**.
 
-##Enter image
+![Login Credentials](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Page2.2.png)
 
 3. On the **Setup local folder options** page you can sync all of your files on the ownCloud server, or select individual folders. 
-The default local sync folder is ownCloud, in your home directory. <br>
+The default local sync folder is ownCloud, in your home directory.
 You can change this if needed.
 
-##Enter image
+![Sync Files](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Page2.3.png)
 
 4. When selection of sync folders completes, click **Connect**. The client establishes connection to your ownCloud server.
    Once connection is established successfully, it starts synchronizing your files and following two buttons are displayed:
@@ -42,9 +62,11 @@ You can change this if needed.
   - Open ownCloud in Browser (To connect to your ownCloud Web GUI)
   - Open Local Folder (To open your local folder)
  
-##Enter image
+![Setup Finish](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Page2.4.png)
 
 5. Click **Finish**.
+
+After it is installed and configured the sync client automatically keep itself updated. See [The Automatic Updater](https://doc.owncloud.org/desktop/2.0/autoupdate.html) for more information.
 
 ## B) For Linux Users
 
@@ -56,7 +78,7 @@ For Linux users, follow the instructions on the download page to:
 
 Linux users update their sync clients via package manager, and the client displays a notification when an update is available.
 
-***IMPORTANT***
+*Note*
 >
 >To login sync client automatically, password manager should be enabled. For example, [GNOME Keyring](https://wiki.gnome.org/Projects/GnomeKeyring/) or [KWallet](https://utils.kde.org/projects/kwalletmanager/).
 
@@ -68,7 +90,7 @@ To get your ownCloud Android app, log into your ownCloud server from your Androi
 
 The first time you log into a new ownCloud account, a screen with a download link to the ownCloud Android App in the [Google Play Store](https://play.google.com/store/apps/details?id=com.owncloud.android) is available.
 
-##Enter imag
+![App Download](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Screen3.1.png)
 
 Find source code and more information from the [ownCloud download page](http://owncloud.org/install/#mobile). 
 
@@ -84,15 +106,15 @@ When you run your ownCloud Android app for the first time, configuration screen 
 >
 >To see your password, click the **eyeball** to the right side of your password.
 
-##Enter imag
+![Configuration Screen](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Screen3.2.png)
 
-For best security, your ownCloud server should be [SSL-enabled](http://info.ssl.com/article.aspx?id=10241) so that you can connect via HTTPS.<br>
-If your server has a self-signed SSL certificate, a warning message is displayed, ”Do you want to trust this certificate anyway?”<br>
+For best security, your ownCloud server should be [SSL-enabled](http://info.ssl.com/article.aspx?id=10241) so that you can connect via HTTPS.
+If your server has a [self-signed SSL certificate](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-16-04), a warning message is displayed, ”**Do you want to trust this certificate anyway?**”<br>
 If this happens, click **Yes** to accept the certificate and complete your account setup.
 
-##Enter imag
+![Trust Certificate](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Screen3.3.png)
 
-ownCloud Android App connection is established with server OwnCloud server.
+ownCloud Android App connection is established with OwnCloud server.
 
 
 
