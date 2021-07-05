@@ -195,8 +195,13 @@ The database, ownCloud and Redis containers are running, and that ownCloud is ac
 ### Logging In
 
 1. Open <code>http://localhost:8080</code> in your browser to log in to the ownCloud UI. The standard ownCloud login screen opens.
-
+<div>
+<ul>
+<li  markdown="1">
 ![OwnCloud Login Page](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Page1.png)
+</li>
+</ul>
+</div>
 
 2. Enter username and password which you stored in <code>.env</code> earlier.
 
