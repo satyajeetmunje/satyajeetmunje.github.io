@@ -1,8 +1,7 @@
-
 ---
 layout: page
-title: test1
-permalink: /about/test1/
+title: Test2
+permalink: /about/test2/
 ---
 
-# Test 120
+# Test 200
