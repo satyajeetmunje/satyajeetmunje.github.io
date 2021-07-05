@@ -123,6 +123,7 @@ Start the container, using your preferred Docker *command-line tool*. The exampl
 After the process completes, run <code>docker-compose ps</code> to check if all the containers have successfully started.<br>
 You should see output similar to the one below:
 
+```html
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 18.75%;">
@@ -159,6 +160,7 @@ You should see output similar to the one below:
 </tr>
 </tbody>
 </table>
+```
 
 The database, ownCloud and Redis containers are running, and that ownCloud is accessible via port 8080 on the host machine.
 
@@ -233,6 +235,7 @@ The file <code>docker-compose.yml</code> contains the configuration of your ownC
 
 YAML
 
+```html
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">version: "3"
@@ -311,6 +314,7 @@ services:
 </div>
 </div>
 </div>
+```
  
 ## Troubleshooting
 
@@ -318,6 +322,7 @@ services:
 
 If your container fails to start on Raspberry Pi or other ARM devices, you may have an old version of <code>libseccomp2</code> on your host. This should affect distros based on Rasbian Buster 32 bit. Install a newer version with the following command:
 
+```html
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">cd /tmp
@@ -325,9 +330,11 @@ wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1
 sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb</code></pre>
 </div>
 </div>
+```
 
 Alternatively, you can add the backports repo for Debian Buster:
 
+```html
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">sudo apt-key adv --keyserver keyserver.ubuntu.com \
@@ -337,7 +344,7 @@ echo "deb http://deb.debian.org/debian buster-backports main" | \
 sudo apt update
 sudo apt install -t buster-backports libseccomp2</code></pre>
 </div>
- 
+```
 You should restart the container after confirming you have <code>libseccomp2.4.4</code> installed.
 
 For more information see: [Linux Server Docs](https://docs.linuxserver.io/faq)
