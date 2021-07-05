@@ -1,6 +1,8 @@
+---
 layout: page
-title: "Connect Server"
-permalink: about/connectserver
+title: Connect Server
+permalink: /connectserver/
+---
 
 # Overview
 
