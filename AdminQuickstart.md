@@ -3,10 +3,10 @@ title: "Admin Quickstart"
 permalink: about/AdminQuickstart/
 
 # Overview
-Quickstart for Installing and Using owncloud.
+Administrator Quickstart for Installing with Docker and Using ownCloud.
 
 # Prerequisite
-Docker installation should be completed on your desktop.
+[Docker installation](https://www.cyberciti.biz/faq/install-use-setup-docker-on-rhel7-centos7-linux/) should be completed on your desktop.
 
 # Installing with Docker
 
@@ -18,10 +18,12 @@ Docker installation should be completed on your desktop.
   * [Stopping the Containers](#Stopping-the-Containers)
   * [Running occ Commands](#Running-occ-Commands)
   * [Docker Compose YAML File](#Docker-Compose-YAML-File)
+* [Troubleshooting](#Troubleshooting)
+  * [Raspberry Pi](#Raspberry-Pi)
 
 ## Introduction
 
-ownCloud can be installed using the [official ownCloud Docker image](http://https://hub.docker.com/r/owncloud/server).This official image is designed to be used in a docker-compose setup.
+ownCloud can be installed using the [official ownCloud Docker image](http://https://hub.docker.com/r/owncloud/server). This official image is designed to be used in a docker-compose setup.
 
 You can add certain users to the group <code>docker</code> to grant them docker command rights.
 
@@ -29,14 +31,14 @@ You can add certain users to the group <code>docker</code> to grant them docker 
 
 *Note:*
 >
->* The changes via <code>usermod</code> take effect after the docker users log in. You can reboot or log in again to run docker commands
+>* The changes via <code>usermod</code> take effect after the docker users log in. You can reboot or log in again to run docker commands.
 >* Users not added to the <code>docker</code> group can run docker commands with a preceding <code>sudo</code>. 
 
 ## Docker Compose
 
 #### The Configuration
 
-* Exposes port 8080 that allows HTTP connections.
+* Exposes port 8080, that allows HTTP connections.
 * Uses separate MariaDB and Redis containers.
 * Mounts the data and MySQL data directories on the host for persistent storage.
 
@@ -94,17 +96,17 @@ Follow these instructions for local installation.
 </tbody>
 </table>
 
-Start the container, using your preferred Docker *command-line tool*. The example below shows how to use [Docker Compose](https://docs.docker.com/compose/)
+Start the container, using your preferred Docker *command-line tool*. The example below shows how to use [Docker Compose](https://docs.docker.com/compose/).
 
 >### Create a new project directory
 >mkdir owncloud-docker-server
 >  
 >cd owncloud-docker-server
 >
->### Copy docker-compose.yml from the GitHub repository
+>#### Copy docker-compose.yml from the GitHub repository
 >wget https://raw.githubusercontent.com/owncloud/docs/master/modules/admin_manual/examples/installation/docker/docker-compose.yml
 >
->### Create the environment configuration file
+>#### Create the environment configuration file
 >cat << EOF > .env<br>
 >OWNCLOUD_VERSION=10.8<br>
 >OWNCLOUD_DOMAIN=localhost:8080<br>
@@ -113,7 +115,7 @@ Start the container, using your preferred Docker *command-line tool*. The exampl
 >HTTP_PORT=8080<br>
 >EOF<br>
 >
->### Build and start the container
+>#### Build and start the container
 >docker-compose up -d
 
 After the process completes, run <code>docker-compose ps</code> to check if all the containers have successfully started.<br>
@@ -158,7 +160,7 @@ You should see output similar to the one below:
 
 The database, ownCloud and Redis containers are running, and that ownCloud is accessible via port 8080 on the host machine.
 
-***IMPORTANT:***
+***IMPORTANT***
 >
 >All files stored in this setup are contained in Docker volumes and the admin is responsible to make the files persistent.
 >
@@ -171,7 +173,7 @@ The database, ownCloud and Redis containers are running, and that ownCloud is ac
 ><code>docker run -v ownclouddockerserver_files:/mnt \
 >            ubuntu tar cf - -C /mnt . > files.tar</code>
 
-*Tip:*
+*Tip*
 >
 >It may take a few minutes for ownCloud to be fully functional.<br>
 >To inspect the log output:
@@ -180,7 +182,7 @@ The database, ownCloud and Redis containers are running, and that ownCloud is ac
 >
 >Wait until the output shows **Starting apache daemon…** before you access the web UI.
 
-***IMPORTANT:***
+***IMPORTANT***
 >Although all important data persists after:
 >
 ><code>docker-compose down; docker-compose up -d</code>
@@ -191,11 +193,12 @@ The database, ownCloud and Redis containers are running, and that ownCloud is ac
 ### Logging In
 
 1. Open <code>http://localhost:8080</code> in your browser to log in to the ownCloud UI. The standard ownCloud login screen opens.
+
 ![OwnCloud Login Page](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Page1.png)
 
 2. Enter username and password which you stored in <code>.env</code> earlier.
 
-*Note:*
+*Note*
 >Login credentials will not change between deploys even if you change the values in .env.
 
 ### Stopping the Containers
@@ -214,7 +217,7 @@ To run an occ command, go to the directory where your <code>.yaml</code> or <cod
 
 <code>docker-compose exec owncloud occ <command></code>
 
-***IMPORTANT:***
+***IMPORTANT***
 >
 >It is advisable not to use the php command prefix in docker environments.
 
@@ -222,7 +225,7 @@ To run an occ command, go to the directory where your <code>.yaml</code> or <cod
 
 The file <code>docker-compose.yml</code> contains the configuration of your ownCloud container.
 
-*Note:*
+*Note*
 >
 >All supported enterprise features and apps are included in the public image owncloud/server available on Docker Hub. 
 
@@ -307,5 +310,34 @@ services:
 </div>
 </div>
  
+## Troubleshooting
+
+### Raspberry Pi
+
+If your container fails to start on Raspberry Pi or other ARM devices, you may have an old version of <code>libseccomp2</code> on your host. This should affect distros based on Rasbian Buster 32 bit. Install a newer version with the following command:
+
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">cd /tmp
+wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb
+sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb</code></pre>
+</div>
+</div>
+
+Alternatively, you can add the backports repo for Debian Buster:
+
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">sudo apt-key adv --keyserver keyserver.ubuntu.com \
+     --recv-keys 04EE7237B7D453EC 648ACFD622F3D138
+echo "deb http://deb.debian.org/debian buster-backports main" | \
+     sudo tee -a /etc/apt/sources.list.d/buster-backports.list
+sudo apt update
+sudo apt install -t buster-backports libseccomp2</code></pre>
+</div>
+ 
+You should restart the container after confirming you have <code>libseccomp2.4.4</code> installed.
+
+For more information see: [Linux Server Docs](https://docs.linuxserver.io/faq)
 
 
