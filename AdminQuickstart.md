@@ -1,6 +1,6 @@
 layout: page
 title: "Admin Quickstart"
-permalink: about/AdminQuickstart/
+permalink: /about/AdminQuickstart/
 
 # Overview
 Administrator Quickstart for Installing with Docker and Using ownCloud.
