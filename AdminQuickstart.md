@@ -2,24 +2,24 @@ layout: page
 title: "Admin Quickstart"
 permalink: about/AdminQuickstart/
 
-# Overview:
-Quickstart for Installing and Using owncloud
+# Overview
+Quickstart for Installing and Using owncloud.
 
-# Prerequisite:
-Docker installation should be completed on your desktop
+# Prerequisite
+Docker installation should be completed on your desktop.
 
-# Installing with Docker 
+# Installing with Docker
 
 ## Table of Contents
 
 * [Introduction](#Introduction)
-* Docker Compose
-  * Logging In
-  * Stopping the Containers
-  * Running occ commands
-  * Docker Compose YAML File
+* [Docker Compose](#Docker-Compose)
+  * [Logging In](#Logging-In)
+  * [Stopping the Containers](#Stopping-the-Containers)
+  * [Running Occ Commands](#Running-Occ-Commands)
+  * [Docker Compose YAML File](#Docker-Compose-YAML-File)
 
-Introduction
+## Introduction
 
 ownCloud can be installed using the [official ownCloud Docker image](http://https://hub.docker.com/r/owncloud/server).This official image is designed to be used in a docker-compose setup.
 
@@ -28,25 +28,25 @@ You can add certain users to the group <code>docker</code> to grant them docker 
 <code>sudo usermod -aG docker &lt;your-user&gt;</code>
 
 *Note:*
+>
+>* The changes via <code>usermod</code> take effect after the docker users log in. You can reboot or log in again to run docker commands
+>* Users not added to the <code>docker</code> group can run docker commands with a preceding <code>sudo</code>. 
 
-* The changes via <code>usermod</code> take effect after the docker users log in. You can reboot or log in again to run docker commands
-* Users not added to the <code>docker</code> group can run docker commands with a preceding <code>sudo</code>. 
+## Docker Compose
 
-Docker Compose
-
-The configuration:
+#### The Configuration
 
 * Exposes port 8080 that allows HTTP connections.
 * Uses separate MariaDB and Redis containers.
 * Mounts the data and MySQL data directories on the host for persistent storage.
 
-Installation
+#### Installation
 
 Follow these instructions for local installation.
 
 *Note:*
-
-You must adapt the value of OWNCLOUD_DOMAIN for remote access.
+>
+>You must adapt the value of OWNCLOUD_DOMAIN for remote access.
 
 1. Create a new project directory.
 2. Copy and paste the sample <code>docker-compose.yml</code> from this page into the new directory.
@@ -188,18 +188,17 @@ The database, ownCloud and Redis containers are running, and that ownCloud is ac
 >there are certain details that get lost.<br>
 >For example, default apps may re-appear after they were uninstalled.
 
-## Logging In
+### Logging In
 
 1. Open <code>http://localhost:8080</code> in your browser to log in to the ownCloud UI. The standard ownCloud login screen opens.
-
-## Inert Image 
+![OwnCloud Login Page](https://github.com/satyajeetmunje/satyajeetmunje.github.io/blob/main/Page1.png)
 
 2. Enter username and password which you stored in <code>.env</code> earlier.
 
 *Note:*
 >Login credentials will not change between deploys even if you change the values in .env.
 
-## Stopping the Containers
+### Stopping the Containers
 
 To stop the containers using docker compose:
 
@@ -209,7 +208,7 @@ To stop and remove containers along with the related networks, images and volume
 
 <code>docker-compose down --rmi all --volumes</code>
 
-## Running occ commands
+### Running Occ Commands
 
 To run an occ command, go to the directory where your <code>.yaml</code> or <code>.env</code> file is located. Here, you can run any command referring to [Using the occ Command](https://doc.owncloud.org/server/10.7/admin_manual/configuration/server/occ_command.html) by entering:
 
@@ -219,7 +218,7 @@ To run an occ command, go to the directory where your <code>.yaml</code> or <cod
 >
 >It is advisable not to use the php command prefix in docker environments.
 
-## Docker Compose YAML File
+### Docker Compose YAML File
 
 The file <code>docker-compose.yml</code> contains the configuration of your ownCloud container.
 
