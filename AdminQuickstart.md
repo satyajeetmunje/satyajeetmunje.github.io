@@ -16,7 +16,7 @@ Docker installation should be completed on your desktop.
 * [Docker Compose](#Docker-Compose)
   * [Logging In](#Logging-In)
   * [Stopping the Containers](#Stopping-the-Containers)
-  * [Running Occ Commands](#Running-Occ-Commands)
+  * [Running occ Commands](#Running-occ-Commands)
   * [Docker Compose YAML File](#Docker-Compose-YAML-File)
 
 ## Introduction
@@ -208,7 +208,7 @@ To stop and remove containers along with the related networks, images and volume
 
 <code>docker-compose down --rmi all --volumes</code>
 
-### Running Occ Commands
+### Running occ Commands
 
 To run an occ command, go to the directory where your <code>.yaml</code> or <code>.env</code> file is located. Here, you can run any command referring to [Using the occ Command](https://doc.owncloud.org/server/10.7/admin_manual/configuration/server/occ_command.html) by entering:
 
