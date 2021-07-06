@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to learning quickstart for installing an Owncloud server as an administrator and connecting to it as a client."
 date:   2021-07-04 22:52:05 +0530
 categories: jekyll update
 ---
